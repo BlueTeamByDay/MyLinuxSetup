@@ -1,5 +1,13 @@
-# I like having these
+# User specific aliases and functions
+alias ls='grc ls -lah --color=auto'
+alias ggrep='grc grep'
+alias gpo='git push origin'
+alias gci='git checkout integration'
 
-alias ls='ls -lahZ --color=auto'
-alias rm='rm -I'
-alias justip='grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}''
+#Store all bash tab history including tmux
+HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTTIMEFORMAT="%m/%d/%y %T     "
